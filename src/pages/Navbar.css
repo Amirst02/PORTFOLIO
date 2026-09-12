@@ -1,0 +1,106 @@
+/* Navbar.css */
+
+.navbar-wrapper {
+  background-color: #0a0a0f;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 1100px;
+  padding: 0.75rem 1.5rem;
+  background-color: #111318;
+  border: 1px solid #1f2229;
+  border-radius: 9999px;
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background-color: rgba(245, 166, 35, 0.1);
+  border: 1px solid rgba(245, 166, 35, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f5a623;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 0.8rem;
+}
+
+.logo-text {
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.logo-suffix {
+  color: #f5a623;
+}
+
+/* Links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #cbd0d8;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.navbar-links li:hover {
+  color: #f5a623;
+}
+
+/* Hire me button */
+.hire-btn {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #f5a623;
+  background: transparent;
+  border: 1px solid #f5a623;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.hire-btn:hover {
+  background-color: #f5a623;
+  color: #000000;
+}
+
+/* Responsive: hide links on small screens */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+  }
+}
