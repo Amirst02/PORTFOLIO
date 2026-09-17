@@ -7,7 +7,7 @@ import hero from "../images/hero.jpg";
 export default function Hero() {
   return (
  <>
- <div className="hero">
+ <div className="hero" id="home">
 
 
 

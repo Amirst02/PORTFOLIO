@@ -1,0 +1,180 @@
+.footer-section {
+  background: #040a10;
+    color: #f5f6f2;
+    overflow: hidden;
+    padding: 120px 24px 0;
+    position: relative;
+}
+
+.footer-contact {
+    background: rgba(7, 12, 17, .92);
+    border: 1px solid rgba(220, 180, 40, .28);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .35), 0 0 45px rgba(220, 180, 40, .1);
+    margin: 0 auto;
+    max-width: 1040px;
+    opacity: 0;
+    padding: 72px 56px;
+    text-align: center;
+    transform: translateY(20px);
+    transition: opacity .7s ease, transform .7s cubic-bezier(.2, .8, .2, 1);
+}
+
+.footer-contact--visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.footer-eyebrow {
+    color: #eab308;
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    font-size: .74rem;
+    font-weight: 700;
+    letter-spacing: .45em;
+    margin: 0 0 24px;
+    text-transform: uppercase;
+}
+
+.footer-contact h2 {
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: clamp(2.35rem, 5vw, 3.35rem);
+    letter-spacing: -.055em;
+    line-height: 1.06;
+    margin: 0;
+}
+
+.footer-contact h2 span {
+    color: #eab308;
+    text-shadow: 0 0 20px rgba(234, 179, 8, .18);
+}
+
+.footer-description {
+    color: #8d9aa8;
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+    margin: 21px auto 42px;
+    max-width: 680px;
+}
+
+.footer-contact-links {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.footer-contact-link {
+    align-items: center;
+    background: rgba(255, 255, 255, .015);
+    border: 1px solid rgba(205, 216, 224, .14);
+    border-radius: 16px;
+    color: #f1f3ef;
+    display: flex;
+    flex-direction: column;
+    min-height: 126px;
+    justify-content: center;
+    padding: 18px;
+    text-decoration: none;
+    transition: border-color .3s ease, box-shadow .3s ease, transform .3s ease;
+}
+
+.footer-contact-link:hover {
+    border-color: rgba(234, 179, 8, .52);
+    box-shadow: 0 15px 35px rgba(234, 179, 8, .07);
+    transform: translateY(-3px);
+}
+
+.footer-contact-icon {
+    color: #eab308;
+    font-size: 22px !important;
+    margin-bottom: 10px;
+    transition: filter .3s ease;
+}
+
+.footer-contact-link:hover .footer-contact-icon {
+    filter: drop-shadow(0 0 8px rgba(234, 179, 8, .45));
+}
+
+.footer-contact-link strong {
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: .92rem;
+}
+
+.footer-contact-link span {
+    color: #8d9aa8;
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    font-size: .69rem;
+    margin-top: 7px;
+}
+
+.footer-bar {
+    align-items: center;
+    border-top: 1px solid rgba(186, 199, 206, .12);
+    display: flex;
+    justify-content: space-between;
+    margin: 96px auto 0;
+    max-width: 1280px;
+    padding: 28px 0;
+}
+
+.footer-bar p {
+    color: #808c98;
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: .78rem;
+    margin: 0;
+}
+
+.footer-brand {
+    color: #f2f4f0 !important;
+    font-size: .95rem !important;
+    font-weight: 700;
+}
+
+.footer-brand span {
+    color: #eab308;
+}
+
+@media (max-width: 700px) {
+    .footer-section {
+        padding: 82px 18px 0;
+    }
+
+    .footer-contact {
+        border-radius: 18px;
+        padding: 55px 22px;
+    }
+
+    .footer-contact-links {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-contact-link {
+        min-height: 112px;
+    }
+
+    .footer-bar {
+        align-items: center;
+        flex-direction: column;
+        gap: 13px;
+        margin-top: 68px;
+        padding: 25px 0;
+        text-align: center;
+    }
+
+    .footer-bar p:last-child {
+        line-height: 1.55;
+        max-width: 290px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .footer-contact {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .footer-contact-link {
+        transition: none;
+    }
+}

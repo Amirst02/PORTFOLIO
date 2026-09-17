@@ -1,10 +1,20 @@
 /* Navbar.css */
 
 .navbar-wrapper {
-  background-color: #0a0a0f;
-  padding: 1.5rem 2rem;
+  background: rgba(5, 8, 13, .86);
+  padding: 1.25rem 1.5rem;
   display: flex;
   justify-content: center;
+  box-sizing: border-box;
+  overflow: visible; /* never clip the pill's rounded corners */
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+
+
+
+     border: none;
 }
 
 .navbar {
@@ -15,9 +25,10 @@
   width: 100%;
   max-width: 1100px;
   padding: 0.75rem 1.5rem;
-  background-color: #111318;
-  border: 1px solid #1f2229;
-  border-radius: 9999px;
+  background-color: rgba(10, 15, 23, .82);
+  border: 1px solid rgba(183, 195, 211, .14);
+  border-radius: 99px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, .2), 0 0 28px rgba(49, 101, 188, .045);
 }
 
 /* Logo */
@@ -64,7 +75,7 @@
   padding: 0;
 }
 
-.navbar-links li {
+.navbar-links li a {
   font-family: "Inter", system-ui, sans-serif;
   font-size: 0.9rem;
   font-weight: 400;
@@ -72,11 +83,17 @@
   cursor: pointer;
   transition: color 0.2s ease;
   white-space: nowrap;
+  text-decoration: none;
+  position: relative;
 }
 
-.navbar-links li:hover {
+.navbar-links li a:hover,
+.navbar-links li a.is-active {
   color: #f5a623;
+  text-shadow: 0 0 14px rgba(245, 166, 35, .28);
 }
+
+.navbar-links li a.is-active::after { background: #f5a623; border-radius: 99px; bottom: -7px; content: ''; height: 2px; left: 50%; position: absolute; transform: translateX(-50%); width: 12px; }
 
 /* Hire me button */
 .hire-btn {
@@ -91,11 +108,13 @@
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease;
   flex-shrink: 0;
+  text-decoration: none;
 }
 
 .hire-btn:hover {
   background-color: #f5a623;
   color: #000000;
+  box-shadow: 0 0 20px rgba(245, 166, 35, .18);
 }
 
 /* Responsive: hide links on small screens */

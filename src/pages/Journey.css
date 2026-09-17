@@ -1,0 +1,168 @@
+.journey-section {
+    background: radial-gradient(circle at 22% 48%, rgba(41, 104, 214, .05), transparent 42%), radial-gradient(circle at 76% 74%, rgba(245, 197, 24, .04), transparent 40%), #05080d;
+    color: #f4f6f1;
+    padding: 150px;
+}
+
+.journey-container {
+    margin: 0 auto;
+    max-width: 1100px;
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.journey-header {
+    max-width: 760px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.journey-eyebrow {
+     color: gold;
+    font-weight: 200;
+    letter-spacing: 2px;
+    margin: 0;
+     font-family: "JetBrains Mono", "Fira Code", monospace;
+}
+
+.journey-header h2 {
+     font-size: 60px;
+    color: aliceblue;
+    margin: 0;
+    font-family: "Inter", system-ui, sans-serif;
+}
+
+.journey-header>p:last-child {
+      color: rgba(240, 248, 255, 0.61);
+
+    font-size: 20px;
+    margin: 0;
+     font-family: "Inter", system-ui, sans-serif;
+}
+
+.journey-timeline {
+    border-left: 1px solid rgba(182, 195, 207, .2);
+    list-style: none;
+    margin: 63px 0 0 16px;
+    max-width: 790px;
+    padding: 0;
+}
+
+.journey-item {
+    animation: journey-rise .6s both;
+    padding: 0 0 62px 47px;
+    position: relative;
+}
+
+.journey-item:nth-child(2) {
+    animation-delay: .08s;
+}
+
+.journey-item:nth-child(3) {
+    animation-delay: .16s;
+}
+
+.journey-item:nth-child(4) {
+    animation-delay: .24s;
+}
+
+.journey-item:last-child {
+    padding-bottom: 0;
+}
+
+.journey-marker {
+    border-radius: 50%;
+    height: 11px;
+    left: -6px;
+    position: absolute;
+    top: 4px;
+    width: 11px;
+}
+
+.journey-marker--gold {
+    background: #f5c518;
+    box-shadow: 0 0 20px rgba(245, 197, 24, .38), 0 0 40px rgba(245, 197, 24, .1);
+}
+
+.journey-marker--blue {
+    background: #5991ff;
+    box-shadow: 0 0 20px rgba(69, 129, 255, .38), 0 0 40px rgba(69, 129, 255, .1);
+}
+
+.journey-year {
+    color: #f5c518;
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.journey-marker--blue+.journey-item-content .journey-year {
+    color: #84adff;
+}
+
+.journey-item h3 {
+    color: #f4f6f1;
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: clamp(1.35rem, 2.2vw, 1.6rem);
+    letter-spacing: -.03em;
+    line-height: 1.2;
+    margin: 12px 0;
+}
+
+.journey-item-content>p:last-child {
+    color: #929ca4;
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
+    max-width: 750px;
+}
+
+@keyframes journey-rise {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 700px) {
+    .journey-section {
+        padding: 90px 20px 100px;
+    }
+
+    .journey-timeline {
+        margin-top: 48px;
+    }
+
+    .journey-item {
+        padding-bottom: 49px;
+        padding-left: 37px;
+    }
+
+    .journey-header h2 {
+        font-size: clamp(2.2rem, 10vw, 2.75rem);
+    }
+
+    .journey-item-content>p:last-child {
+        font-size: .94rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .journey-item {
+        animation: none;
+    }
+}

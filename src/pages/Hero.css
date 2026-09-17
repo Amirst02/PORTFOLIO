@@ -5,6 +5,10 @@ display: flex;
 justify-content: center;
 
 
+ background: radial-gradient(ellipse 60% 70% at 72% 35%, rgba(36, 89, 171, .09), transparent 70%), #05080d;
+
+ padding-top: 50px;
+     
 
 }
 

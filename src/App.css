@@ -1,9 +1,115 @@
-.body{
-  background-color: #040A10;
-margin: 0;
-  padding: 0;
-  font-family: 'Inter', sans-serif;
+.top-glow-section {
+  position: relative;
+  overflow: visible;
+  background: #05080d;
+  background-image:
+    radial-gradient(ellipse 800px 500px at 20% 8%, rgba(36, 89, 171, .14), transparent 70%),
+    radial-gradient(ellipse 700px 480px at 88% 28%, rgba(212, 175, 55, .055), transparent 72%),
+    linear-gradient(rgba(135, 158, 198, .025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(135, 158, 198, .025) 1px, transparent 1px);
+  background-size: auto, auto, 48px 48px, 48px 48px;
 
-  height: 100vh;
+   min-height: 100vh;
 }
 
+.top-glow-section::before,
+.top-glow-section::after {
+  color: rgba(157, 181, 227, .1);
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 1rem;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+}
+
+.top-glow-section::before { content: '</>'; left: 5%; top: 22%; animation: ambient-float 8s ease-in-out infinite; }
+.top-glow-section::after { color: rgba(245, 197, 24, .1); content: '{ }'; right: 7%; top: 58%; animation: ambient-float 10s ease-in-out -3s infinite; }
+.top-glow-section > * { position: relative; z-index: 1; }
+
+.portfolio-reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s cubic-bezier(.2, .8, .2, 1); }
+.portfolio-reveal--visible { opacity: 1; transform: translateY(0); }
+@keyframes ambient-float { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-10px) rotate(4deg); } }
+
+@media (prefers-reduced-motion: reduce) { .portfolio-reveal { opacity: 1; transform: none; transition: none; }.top-glow-section::before, .top-glow-section::after { animation: none; } }
+@media (max-width: 600px) { .top-glow-section::before, .top-glow-section::after { display: none; } }
+
+.skills-and-projects {
+  align-items: start;
+  display: grid;
+  gap: 48px;
+  grid-template-columns: 300px minmax(0, 1fr);
+  margin: 0 auto;
+  max-width: 1240px;
+}
+
+/* Repositions the existing Skills section without changing its visual language. */
+.skills-and-projects .c1 {
+  background: transparent;
+  box-sizing: border-box;
+  overflow: visible;
+  padding: 128px 0 136px;
+  width: 100%;
+}
+
+.skills-and-projects .c1::before,
+.skills-and-projects .c1::after {
+  display: none;
+}
+
+.skills-and-projects .c2 {
+  gap: 13px;
+}
+
+.skills-and-projects .c3 {
+  font-size: .7rem;
+}
+
+.skills-and-projects .c4 {
+  font-size: 2.05rem;
+  line-height: 1.08;
+}
+
+.skills-and-projects .c5 {
+  font-size: .9rem;
+  line-height: 1.6;
+}
+
+.skills-and-projects .c2-1 {
+  gap: 14px;
+  grid-template-columns: 1fr;
+  margin-top: 34px;
+}
+
+.skills-and-projects .frontend {
+  padding: 20px;
+}
+
+.skills-and-projects .skilfr {
+  font-size: .72rem;
+  padding: 7px 9px;
+}
+
+@media (max-width: 900px) {
+  .skills-and-projects {
+    display: block;
+    max-width: none;
+  }
+
+  .skills-and-projects .c1 {
+    padding: 86px 24px 24px;
+  }
+
+  .skills-and-projects .c2-1 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .skills-and-projects .c1 {
+    padding-inline: 18px;
+  }
+
+  .skills-and-projects .c2-1 {
+    grid-template-columns: 1fr;
+  }
+}
